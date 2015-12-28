@@ -15,7 +15,7 @@ class BeeModel {
      * Create bees
      *
      * @param string $type   type of bee
-     * @param int    $amount amout of bees need to create
+     * @param int    $amount amount of bees need to create
      *
      * @return array bees
      */
@@ -81,7 +81,7 @@ class BeeModel {
     {
         $beesList = $this->getBeesList();
         $liveBeesList = array();
-        
+
         //Fills live bee list
         foreach ($beesList as $key => $bee) {
             if ($bee->getLifeSpan() > 0) {
@@ -90,19 +90,6 @@ class BeeModel {
         }
 
         return $liveBeesList[array_rand($liveBeesList, 1)];
-    }
-
-    /**
-     * hit bee
-     *
-     * @param BeeInterface $bee bee
-     *
-     * @return BeeInterface bee
-     */
-    public function hitBee($bee)
-    {
-        $bee->hit();
-        return $bee;
     }
 
     /**

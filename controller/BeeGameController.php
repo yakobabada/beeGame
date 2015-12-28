@@ -35,8 +35,7 @@ class BeeGameController {
             $randomBeeId = $beeModel->getRandomLiveBee();
             
             //Hit the random bee and update beesList
-            $randomBee = $beeModel->hitBee($beesList[$randomBeeId]);
-            $beesList[$randomBeeId] = $randomBee;
+            $beesList[$randomBeeId]->hit();
             $beeModel->saveBeesInSession($beesList);
             
             //If the queen dies then start a new round
