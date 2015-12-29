@@ -14,16 +14,16 @@ class BeeModel {
     /**
      * Create bees
      *
-     * @param string $type   type of bee
-     * @param int    $amount amount of bees need to create
+     * @param string $type type of bee
+     * @param int    $no   no of bees need to create
      *
      * @return array bees
      */
-    public function createBees($type, $amount)
+    public function createBees($type, $no)
     {
         $bees = array();
 
-        for ($i = 0; $i < $amount; $i++) {
+        for ($i = 0; $i < $no; $i++) {
             $bees[] = new $type();
         }
 
@@ -37,9 +37,9 @@ class BeeModel {
      */
     public function createBeesList()
     {
-        $queenList  = $this->createBees(QueenBee::NAME, AMOUNT_OF_QUEENS);
-        $workerList = $this->createBees(WorkerBee::NAME, AMOUNT_OF_WORKERS);
-        $droneList  = $this->createBees(DroneBee::NAME, AMOUNT_OF_DRONES);
+        $queenList  = $this->createBees(QueenBee::NAME, NO_OF_QUEENS);
+        $workerList = $this->createBees(WorkerBee::NAME, NO_OF_WORKERS);
+        $droneList  = $this->createBees(DroneBee::NAME, NO_OF_DRONES);
         $this->beesList = array_merge($queenList, $workerList, $droneList);
         return $this->beesList;
     }
@@ -107,11 +107,11 @@ class BeeModel {
     }
 
     /**
-     * Check if the queen is a live
+     * Check if the queen is alive
      *
      * @return boolean status of bee list
      */
-    public function isQueenALive()
+    public function isQueenAlive()
     {
         $beeList = $this->getBeesList();
 

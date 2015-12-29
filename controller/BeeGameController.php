@@ -39,7 +39,7 @@ class BeeGameController {
             $beeModel->saveBeesInSession($beesList);
             
             //If the queen dies then start a new round
-            if (!$beeModel->isQueenALive()) {
+            if (!$beeModel->isQueenAlive()) {
                 header("location:start");
             }
             
